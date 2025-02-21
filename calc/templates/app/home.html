@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>abc</title>
+</head>
+<body>
+    <form action="app/select" method="POST" >
+        {% csrf_token %}
+        <input type="number" name="n1" id="" placeholder="1st no.">
+        
+        <input type="number" name="n2" id="" placeholder="2nd no.">
+        <select name="op" id="">
+            <option value="1">add</option>
+            <option value="2">sub</option>
+            <option value="3">mul</option>
+            <option value="4">div</option>
+            <option value="5">mod</option>
+        </select>
+        <button type="submit">result</button>
+       
+    </form>
+
+
+    <!-- <form action="app/add" method="POST" >
+        {% csrf_token %}
+        <input type="number" name="n1" id="" placeholder="1st no.">
+        
+        <input type="number" name="n2" id="" placeholder="2nd no.">
+        <button type="submit">ADDITION</button>
+       
+    </form>
+
+
+<br>
+    <form action="app/sub" method="POST" >
+        {% csrf_token %}
+        <input type="number" name="n1" id="" placeholder="1st no.">
+        
+        <input type="number" name="n2" id="" placeholder="2nd no.">
+        <button type="submit">SUBTRACT</button>
+       
+    </form>
+
+
+
+<br>
+    <form action="app/mul" method="POST" >
+        {% csrf_token %}
+        <input type="number" name="n1" id="" placeholder="1st no.">
+        
+        <input type="number" name="n2" id="" placeholder="2nd no.">
+        <button type="submit">MULTIPLY</button>
+       
+    </form>
+
+
+<br>
+    <form action="app/div" method="POST" >
+        {% csrf_token %}
+        <input type="number" name="n1" id="" placeholder="1st no.">
+        
+        <input type="number" name="n2" id="" placeholder="2nd no.">
+        <button type="submit">DIVISION</button>
+       
+    </form>
+
+
+<br>
+    <form action="app/mod" method="POST" >
+        {% csrf_token %}
+        <input type="number" name="n1" id="" placeholder="1st no.">
+        
+        <input type="number" name="n2" id="" placeholder="2nd no.">
+        <button type="submit">MODULO</button>
+       
+    </form> -->
+</body>
+</html>
