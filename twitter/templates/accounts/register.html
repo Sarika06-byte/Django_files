@@ -1,0 +1,44 @@
+{% extends "home/base.html" %}
+{% block content %}
+
+<form action="{% url 'create' %}" method="POST" enctype='multipart/form-data' style="width: 36%;margin-left: 350px;padding-top: 100px;"  class="shadow p-3 mb-5  rounded mt-5 ml-4">
+    {% csrf_token %}
+      <h2  style="color: black;font-weight: 700;">Welcome to twitter</h2>
+    <div  style="color: black;font-weight: 600;"><h4>Create Account</h4></div>
+    <div class="border-bottom  ">
+        <label for="exampleFormControlInput1" class="form-label">Username</label>
+        <input type="text" name="bio" placeholder="enter username" class="form-control" id="exampleFormControlInput1" class="bg-body-tertiary ">
+      </div>
+      <div class="border-bottom  " >  
+    <label for="exampleFormControlInput1" class="form-label">Bio</label>
+    <input type="text" name="username" placeholder="enter bio" class="form-control" id="exampleFormControlInput1" >
+  </div>
+  <div class="border-bottom  ">
+    <label for="exampleFormControlInput1" class="form-label">Password</label>
+    <input type="password" name="password" placeholder="enter password" class="form-control" id="exampleFormControlInput1" >
+  </div>
+  <div class="border-bottom  ">
+    <label for="exampleFormControlInput1" class="form-label">Date-Of-Birth</label>
+    <input  type="date" name="dob" placeholder="enter date"class="form-control" id="exampleFormControlInput1" >
+  </div>
+  <div class="border-bottom  ">
+        <label for="exampleFormControlInput1" class="form-label">Location</label>
+        <input type="text" name="location" placeholder="enter location" class="form-control" id="exampleFormControlInput1" >
+      </div>
+    <label for="exampleFormControlInput1" class="form-label">
+         Profile  image
+    </label>
+    <input type="file" name="img1" placeholder="profile_pictures"class="form-control" id="exampleFormControlInput1" >
+  </div>
+  <div class="border-bottom mb-3  ">
+    <label for="exampleFormControlInput1" class="form-label">cover image</label>
+    <input type="file" name="img2" placeholder="cover_img" class="form-control" id="exampleFormControlInput1" >
+  </div>
+
+  <div class="col-12">
+    <button type="submit" class="btn btn-primary" style="height: 3rem;width: 12rem;font-size: 1.4rem;font-weight: 700;border-radius: 10px;margin-left: 9rem;">Create</button>
+  </div>
+</form>
+
+
+{% endblock %}

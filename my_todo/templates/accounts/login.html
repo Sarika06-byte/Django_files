@@ -1,0 +1,18 @@
+{% extends "home/base.html" %}
+{% block content %}
+
+<div class="contain" style="background-color: aliceblue;padding: 2rem;text-align: center;margin: 1rem;border-radius: 10px;height: 20rem;width: 25rem;margin-left: 35rem;">
+<h2>  Login Account</h2>
+<form action="{% url 'todo_list' %}" method="post">
+    {% csrf_token %}
+    
+    Username : <input type="text" name="" id="" placeholder="enter username" ><br><br>
+    Password : <input type="password" name="" placeholder="enter password" id=""><br><br> 
+       <button type="submit" style="height: 2.7rem;width: 6rem;font-weight: 600;font-size: 1.2rem;background-color: black;color: white;border-radius: 5px;">Login</button>
+
+
+</form>
+</div>
+
+
+{% endblock content %}

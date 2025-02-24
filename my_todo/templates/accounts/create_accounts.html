@@ -1,0 +1,18 @@
+{% extends "home/base.html" %}
+{% block content %}
+<div class="contain" style="background-color: aliceblue;padding: 2rem;text-align: center;margin: 1rem;border-radius: 10px;height: 20rem;width: 25rem;margin-left: 35rem;">
+<h2>Create Account</h2>
+<form action="{% url 'create' %}" method="post">
+    {% csrf_token %}
+    Username : <input type="text" name="username" id=""><br><br>
+    Password : <input type="password" name="password" id=""><br><br>
+    Email : <input type="email" name="" id=""><br><br>
+    <button type="submit" style="height: 2.7rem;width: 8rem;font-weight: 600;font-size: 1rem;background-color: black;color: white;border-radius: 5px;">Create account</button><p>Already have a account ? <a href="{%  url 'login' %}" style="text-decoration: none;">Login</a></p>
+
+</form>
+</div>
+
+
+
+
+{% endblock content %}

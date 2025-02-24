@@ -1,0 +1,45 @@
+{% extends "home/base.html" %}
+{% block content %}
+
+
+<div class="container ">
+   <small>Logged in as : {{request.user.username}}</small>
+   <a href="{% url 'logout' %}" style="margin-left: 2rem;text-decoration: none;">Logout</a>
+   <h2>My Todo's</h2>
+</div>
+<form action="{% url 'create' %}" method="post">
+   <div class="content"
+      style="border-radius: 1rem;text-align: center;font-size: 1.2rem;margin-bottom: 2rem;padding: 1rem;">
+      {% csrf_token %}
+      Title &nbsp;:&nbsp;<input type="text" name="title" id="" placeholder="enter title"><br><br>
+      Descp : <textarea name="descp" id=""></textarea><br>
+      <button
+         style="background-color: black;color: white;height: 2.4rem;width: 7rem;font-size: 1rem;border-radius: 1rem;">Save</button>
+   </div>
+</form>
+
+
+{% for t in todo%}
+<div class="content" style="border-radius: 1rem;font-size: 2rem;">
+{% if t.is_completed %}
+
+   <strike>{{t.title}}</strike>
+{% else %}
+   Title : {{t.title}}
+{% endif %}
+   <br>
+   dsescp : {{t.description}}
+   {% if t.is_completed%}
+      <button style="background-color: beige;">completed</button>
+   {% else %}
+      <a href="{%url 'complete' t.id %}"><button>complete</button></a>
+   {% endif %}
+   <a href="{%url 'update' t.id  %}"><button>edit</button></a>
+   <a href="{%url 'delete' t.id  %}"><button>delete</button></a>
+
+</div>
+<br>
+{% endfor %}
+
+
+{% endblock content %}

@@ -1,0 +1,17 @@
+{% extends "home/base.html" %}
+{% block content %}
+<form action="{% url 'update' todo.id %}" method="post">
+   <div class="content"
+      style="border-radius: 1rem;text-align: center;font-size: 1.2rem;margin-bottom: 2rem;padding: 1rem;">
+      {% csrf_token %}
+      Title &nbsp;:&nbsp;<input type="text" name="title" id="" value="{{todo.title}}" placeholder="enter title" ><br><br>
+      Descp : <textarea name="descp" id="">{{todo.description}}</textarea><br>
+      <button
+         style="background-color: black;color: white;height: 2.4rem;width: 7rem;font-size: 1rem;border-radius: 1rem;">Save</button>
+   </div>
+</form>
+
+
+
+
+{% endblock content %}
